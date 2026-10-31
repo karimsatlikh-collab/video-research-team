@@ -1,26 +1,33 @@
-## Purpose
-What question or defect does this change address?
+## Scope
+- What changed:
+- Explicitly out of scope:
 
-## Changes
-- 
+## Exact revision
+- Head SHA (full 40 characters):
+- Base SHA:
 
-## Evidence
-- [ ] Relevant tests or checks were run and their actual results are reported below.
-- [ ] If checks were not run, this is explicitly stated.
-- [ ] Related work item / experiment ID:
-- [ ] Relevant commit, dataset, config or report links:
+## Raw test output
+Paste unedited command output, including exit code. If not run, write **NOT RUN** and explain why.
 
-## Research integrity
-- [ ] Source-confirmed rules remain separate from hypotheses and engineering choices.
-- [ ] Failed/negative results and prior versions are preserved.
-- [ ] No look-ahead, data leakage or pivot-timing concern is hidden.
-- [ ] No unsupported claim of compile, backtest, deployment, extraction or 24/7 operation is made.
+## CI evidence for this exact SHA
+- Actions run URL:
+- Run head SHA (must equal the PR head SHA):
+- Result:
+- If no run exists, write **NO RUN**. Do not infer success from another commit.
 
-## Approval and risk
-- [ ] No paid service, purchase, external charge or live-trading action is being initiated without explicit user approval.
-- Risk level: low / medium / high / critical
+## Limitations and residual risks
 - Known limitations:
-- Rollback plan:
+- Untested paths:
+- Security / compatibility concerns:
 
-## Reviewer acceptance criteria
-List observable pass/fail criteria for this change.
+## Schema impact
+- Does this change any schema? **Yes / No**
+- If yes, identify exact schema files and compatibility impact. If no, explain why not applicable.
+
+## Human approval
+- Independent human reviewer required (not the author): **Yes**
+- Human review completed: **No / Pending**
+- Author must not approve or merge their own PR. Merge decision belongs to a human maintainer only.
+
+## Evidence labels
+Use **Verified**, **Reported**, **Hypothesis**, or **Unknown / not tested** for material claims.
