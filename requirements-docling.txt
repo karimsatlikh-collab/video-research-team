@@ -1,1 +1,3 @@
-# Optional document-ingestion extra; install in an isolated environment only.\n# Docling code is MIT; review each model/optional dependency license separately.\ndocling==2.144.0\n
+# Optional document-ingestion extra; install in an isolated environment only.
+# Docling code is MIT; review each model/optional dependency license separately.
+docling==2.144.0
