@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OpenFX AttemptEvent v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "sequence", "event_id", "attempt_id", "event_type",
+    "occurred_at_utc", "payload", "previous_event_sha256", "event_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "sequence": {"type": "integer", "minimum": 1},
+    "event_id": {"type": "string", "minLength": 1},
+    "attempt_id": {"type": "string", "minLength": 1},
+    "event_type": {
+      "enum": [
+        "started", "pre_registration_rejected", "registration_failed",
+        "trial_registered", "reconciliation_required"
+      ]
+    },
+    "occurred_at_utc": {"type": "string", "format": "date-time"},
+    "payload": {"type": "object"},
+    "previous_event_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "event_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}
