@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "corpus_id": "time-openfx-docling-html-v1",
+  "rights_basis": "Synthetic examples authored for this repository; no external source material.",
+  "fixtures": [
+    {
+      "fixture_id": "docling-html-fa-001",
+      "path": "synthetic-fa-001.html",
+      "rights_review_state": "synthetic_fixture",
+      "critical_tokens": ["۴۵", "پوینت", "نیست", "نرسیده", "تأیید نشده"],
+      "expected_locators": [],
+      "reference_text": "حد ضرر ۴۵ پوینت است؛ حد سود ۳ برابر ریسک نیست. اگر قیمت به سطح نرسیده باشد، شکست تأیید نشده است."
+    },
+    {
+      "fixture_id": "docling-html-en-001",
+      "path": "synthetic-en-001.html",
+      "rights_review_state": "synthetic_fixture",
+      "critical_tokens": ["1.25", "ATR", "not", "12.5 percent", "1.08450", "close", "wick", "insufficient"],
+      "expected_locators": [],
+      "reference_text": "The threshold is 1.25 ATR, not 12.5 percent. A close above 1.08450 is required; a wick above 1.08450 alone is insufficient."
+    }
+  ]
+}
