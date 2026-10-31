@@ -90,6 +90,12 @@ EXAMPLES = {
         "outcome": "pending", "payload": {}, "previous_event_sha256": "0" * 64,
         "event_sha256": HASH,
     },
+    "attempt-event-v1.schema.json": {
+        "schema_version": 1, "sequence": 1, "event_id": "attempt-event-1",
+        "attempt_id": "attempt-1", "event_type": "started",
+        "occurred_at_utc": NOW, "payload": {"request_sha256": HASH},
+        "previous_event_sha256": "0" * 64, "event_sha256": HASH,
+    },
     "synthetic-run-record-v1.schema.json": {
         "schema_version": 1, "frozen_sha256": HASH, "trial_id": "trial-1",
         "evidence_level": "synthetic", "engine": "openfx.synthetic_engine.run_synthetic",
