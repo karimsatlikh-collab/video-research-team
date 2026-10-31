@@ -135,14 +135,20 @@ class LocalAttemptLedger:
                 raise AttemptLedgerError("unsupported attempt event schema version")
             if row["previous_event_sha256"] != previous or supplied_hash != _event_hash(row):
                 raise AttemptLedgerError(f"hash-chain verification failed at ledger line {line_number}")
-            if row["sequence"] != len(rows) + 1:
+            if (
+                isinstance(row["sequence"], bool)
+                or not isinstance(row["sequence"], int)
+                or row["sequence"] != len(rows) + 1
+            ):
                 raise AttemptLedgerError(f"invalid sequence at ledger line {line_number}")
+            if not isinstance(row["event_id"], str) or not row["event_id"].strip():
+                raise AttemptLedgerError(f"invalid event_id at ledger line {line_number}")
             if row["event_id"] in seen_event_ids:
                 raise AttemptLedgerError(f"duplicate event_id at ledger line {line_number}")
             if not isinstance(row["attempt_id"], str) or not row["attempt_id"].strip():
                 raise AttemptLedgerError(f"invalid attempt_id at ledger line {line_number}")
             event_type = row["event_type"]
-            if event_type not in EVENT_TYPES:
+            if not isinstance(event_type, str) or event_type not in EVENT_TYPES:
                 raise AttemptLedgerError(f"invalid event_type at ledger line {line_number}")
             if not isinstance(row["payload"], dict):
                 raise AttemptLedgerError(f"invalid payload at ledger line {line_number}")
@@ -187,7 +193,7 @@ class LocalAttemptLedger:
             raise AttemptLedgerError("event_id must be non-empty")
         if not isinstance(attempt_id, str) or not attempt_id.strip():
             raise AttemptLedgerError("attempt_id must be non-empty")
-        if event_type not in EVENT_TYPES:
+        if not isinstance(event_type, str) or event_type not in EVENT_TYPES:
             raise AttemptLedgerError("unsupported attempt event type")
         self._validate_payload(event_type, payload)
 
