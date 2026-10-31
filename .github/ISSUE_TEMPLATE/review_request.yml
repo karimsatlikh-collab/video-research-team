@@ -1,0 +1,50 @@
+name: Independent review request
+description: Request a read-only, SHA-specific independent review
+title: "[Review] PR #"
+labels: ["independent-review"]
+body:
+  - type: input
+    id: pr_number
+    attributes:
+      label: Pull request number
+      placeholder: "123"
+    validations:
+      required: true
+  - type: input
+    id: head_sha
+    attributes:
+      label: Exact PR head SHA
+      description: Full 40-character commit SHA; do not use a branch name.
+      placeholder: "0123456789abcdef0123456789abcdef01234567"
+    validations:
+      required: true
+  - type: textarea
+    id: questions
+    attributes:
+      label: Review questions
+      description: Ask focused questions that can be answered from evidence.
+      placeholder: "1. ...\n2. ..."
+    validations:
+      required: true
+  - type: textarea
+    id: risk_areas
+    attributes:
+      label: High-risk areas
+      description: List paths, security boundaries, assumptions, and likely failure modes.
+    validations:
+      required: true
+  - type: input
+    id: actions_run
+    attributes:
+      label: Actions run URL for this exact SHA
+      description: Paste the run URL and confirm its head_sha matches the field above. If no run exists, enter NONE.
+      placeholder: "https://github.com/OWNER/REPO/actions/runs/..."
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and limitations
+      description: Link raw logs/artifacts and label claims Verified, Reported, Hypothesis, or Unknown.
+    validations:
+      required: true
